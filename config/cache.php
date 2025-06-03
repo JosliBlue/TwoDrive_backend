@@ -15,7 +15,9 @@ return [
     |
     */
 
-    'default' => env('CACHE_STORE', 'database'),
+    //'default' => env('CACHE_STORE', 'database'),
+    'default' => env('CACHE_DRIVER', 'array'),  // Antes era env('CACHE_STORE', 'database')
+    'annotations' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -102,6 +104,6 @@ return [
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache_'),
 
 ];
